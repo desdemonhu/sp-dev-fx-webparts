@@ -57,7 +57,7 @@ margin-bottom: 10px;
 
 }
 .accordion__item .accordion__title {
-padding: 5px 20px;;
+padding: 5px 20px;
 background-color: "[theme: themePrimary, default: #0078d7]";
 }
 .accordion__item .accordion__title h3 {

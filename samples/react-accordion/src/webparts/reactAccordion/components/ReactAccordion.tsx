@@ -1,6 +1,8 @@
 import * as React from 'react';
 import styles from './ReactAccordion.module.scss';
 import { IReactAccordionProps } from './IReactAccordionProps';
+import styled from 'styled-components';
+
 import { SPHttpClient, SPHttpClientResponse, ISPHttpClientOptions } from '@microsoft/sp-http';
 import { PrimaryButton } from 'office-ui-fabric-react/lib/Button';
 import { SearchBox } from 'office-ui-fabric-react/lib/SearchBox';
@@ -29,7 +31,9 @@ export default class ReactAccordion extends React.Component<IReactAccordionProps
       items: [],
       listItems: [],
       isLoading: false,
-      loaderMessage: ''
+      loaderMessage: '',
+      color: this.props.color,
+      onColorChanged: this.props.onColorChanged
     };
 
     if (!this.listNotConfigured(this.props)) {
@@ -52,7 +56,7 @@ export default class ReactAccordion extends React.Component<IReactAccordionProps
       event === null ||
       event === "") {
       let listItemsCollection = [...this.state.listItems];
-      this.setState({ items: listItemsCollection.splice(0, this.props.maxItemsPerPage) });
+      this.setState({ items: listItemsCollection.splice(0, this.props.maxItemsPerPage)});
     }
     else {
       var updatedList = [...this.state.listItems];
@@ -84,6 +88,7 @@ export default class ReactAccordion extends React.Component<IReactAccordionProps
         this.setState({
           status: "",
           items: listItemsCollection.splice(0, this.props.maxItemsPerPage),
+          color: this.props.color,
           listItems: response.value,
           isLoading: false,
           loaderMessage: ""
@@ -106,6 +111,10 @@ export default class ReactAccordion extends React.Component<IReactAccordionProps
     let pageCountDivisor: number = this.props.maxItemsPerPage;
     let pageCount: number;
     let pageButtons = [];
+    let StyledComponent = styled(AccordionItemTitle) `
+        background: ${this.props.color};
+        padding: 5px 20px;
+        `;
 
     let _pagedButtonClick = (pageNumber: number, listData: any) => {
       let startIndex: number = (pageNumber - 1) * pageCountDivisor;
@@ -113,13 +122,13 @@ export default class ReactAccordion extends React.Component<IReactAccordionProps
       this.setState({ items: listItemsCollection.splice(startIndex, pageCountDivisor) });
     };
 
-    const items: JSX.Element[] = this.state.items.map((item: IAccordionListItem, i: number): JSX.Element => {
+    let items: JSX.Element[] = this.state.items.map((item: IAccordionListItem, i: number): JSX.Element => {
       return (
         <AccordionItem>
-          <AccordionItemTitle className="accordion__title">
-            <h3 className="u-position-relative ms-fontColor-white">{item.Title}</h3>
+          <StyledComponent>       
+          <h3 className="u-position-relative ms-fontColor-white">{item.Title}</h3>
             <div className="accordion__arrow ms-fontColor-white" role="presentation" />
-          </AccordionItemTitle>
+          </StyledComponent>
           <AccordionItemBody className="accordion__body">
             <div className="" dangerouslySetInnerHTML={{ __html: item.Description }}>
             </div>

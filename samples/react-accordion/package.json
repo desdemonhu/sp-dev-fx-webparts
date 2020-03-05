@@ -25,7 +25,8 @@
     "office-ui-fabric-react": "6.189.2",
     "react": "16.8.5",
     "react-accessible-accordion": "1.0.2",
-    "react-dom": "16.8.5"
+    "react-dom": "16.8.5",
+    "styled-components": "^5.0.1"
   },
   "resolutions": {
     "@types/react": "16.8.8"
