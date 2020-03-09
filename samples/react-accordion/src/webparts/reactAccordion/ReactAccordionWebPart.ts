@@ -119,7 +119,7 @@ export default class ReactAccordionWebPart extends BaseClientSideWebPart<IReactA
                   label: "Title Text Color",
                   color: this.properties.color,
                   textColor: this.properties.textColor,
-                  onColorChanged: this.onColorChange.bind(this),
+                  onColorChanged: this.onTextColorChange.bind(this),
                   onTextColorChanged: this.onTextColorChange.bind(this),
                   onRender: this.render.bind(this)
                   }),
