@@ -25,7 +25,9 @@ export interface IReactAccordionWebPartProps {
   displayMode: DisplayMode;
   maxItemsPerPage: number;
   color: string;
+  textColor: string;
   onColorChanged: (color: string) => void;
+  onTextColorChanged: (textColor: string) => void;
 }
 
 
@@ -35,8 +37,8 @@ export default class ReactAccordionWebPart extends BaseClientSideWebPart<IReactA
     }
     */
 
-   protected onColorChange(color: any) {
-    update(
+  protected onColorChange(color: any) {
+  update(
     this.properties,
     "color",
     (): any => {
@@ -45,6 +47,17 @@ export default class ReactAccordionWebPart extends BaseClientSideWebPart<IReactA
     );
     this.render();
     }
+
+  protected onTextColorChange(textColor: any) {
+    update(
+      this.properties,
+      "textColor",
+      (): any => {
+        return textColor;
+      }
+      );
+      this.render();
+      }
 
   public render(): void {
     const element: React.ReactElement<IReactAccordionProps> = React.createElement(
@@ -58,8 +71,10 @@ export default class ReactAccordionWebPart extends BaseClientSideWebPart<IReactA
         displayMode: this.displayMode,
         maxItemsPerPage: this.properties.maxItemsPerPage,
         color: this.properties.color,
+        textColor: this.properties.textColor,
         label: this.properties.label,
         onColorChanged: this.properties.onColorChanged,
+        onTextColorChanged: this.properties.onTextColorChanged,
         updateProperty: this.properties.updateProperty,
         onRender: this.render.bind(this)
     }
@@ -94,7 +109,18 @@ export default class ReactAccordionWebPart extends BaseClientSideWebPart<IReactA
                   key: "COLOR PICKER",
                   label: "Title Background Color",
                   color: this.properties.color,
+                  textColor: this.properties.textColor,
                   onColorChanged: this.onColorChange.bind(this),
+                  onTextColorChanged: this.onTextColorChange.bind(this),
+                  onRender: this.render.bind(this)
+                  }),
+                new ColorPickerControlProperty('textColor', {
+                  key: "TEXT COLOR",
+                  label: "Title Text Color",
+                  color: this.properties.color,
+                  textColor: this.properties.textColor,
+                  onColorChanged: this.onColorChange.bind(this),
+                  onTextColorChanged: this.onTextColorChange.bind(this),
                   onRender: this.render.bind(this)
                   }),
                 PropertyPaneSlider('maxItemsPerPage', {

@@ -10,7 +10,9 @@ export interface ColorPickerControlInternalProps extends  IPropertyPaneCustomFie
 onRender: any;
 label: string;
 color: string;
+textColor: string;
 onColorChanged: (color: string) => void;
+onTextColorChanged: (textColor: string) => void;
 }
 
 export class ColorPickerControlProperty implements IPropertyPaneField<ColorPickerControlInternalProps> {
@@ -25,7 +27,9 @@ this.properties = {
 key: properties.key,
 label: properties.label,
 color: properties.color,
+textColor: properties.textColor,
 onColorChanged: properties.onColorChanged,
+onTextColorChanged: properties.onTextColorChanged,
 onRender: this.onRender.bind(this)
 };
 }
@@ -44,7 +48,9 @@ const element: React.ReactElement<IColorPickerControlProps> = React.createElemen
 key: this.properties.key,
 label: this.properties.label,
 color: this.properties.color,
-onColorChanged: this.properties.onColorChanged
+textColor: this.properties.textColor,
+onColorChanged: this.properties.onColorChanged,
+onTextColorChanged: this.properties.onTextColorChanged
 });
 ReactDom.render(element, elem);
 }

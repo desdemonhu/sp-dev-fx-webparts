@@ -33,7 +33,9 @@ export default class ReactAccordion extends React.Component<IReactAccordionProps
       isLoading: false,
       loaderMessage: '',
       color: this.props.color,
-      onColorChanged: this.props.onColorChanged
+      textColor: this.props.textColor,
+      onColorChanged: this.props.onColorChanged,
+      onTextColorChanged: this.props.onTextColorChanged
     };
 
     if (!this.listNotConfigured(this.props)) {
@@ -89,6 +91,7 @@ export default class ReactAccordion extends React.Component<IReactAccordionProps
           status: "",
           items: listItemsCollection.splice(0, this.props.maxItemsPerPage),
           color: this.props.color,
+          textColor: this.props.textColor,
           listItems: response.value,
           isLoading: false,
           loaderMessage: ""
@@ -126,7 +129,8 @@ export default class ReactAccordion extends React.Component<IReactAccordionProps
       return (
         <AccordionItem>
           <StyledComponent>       
-          <h3 className="u-position-relative ms-fontColor-white">{item.Title}</h3>
+          <h3 className="u-position-relative ms-fontColor-white"
+           ><span style={{color: `${this.props.textColor}`}}>{item.Title}</span></h3>
             <div className="accordion__arrow ms-fontColor-white" role="presentation" />
           </StyledComponent>
           <AccordionItemBody className="accordion__body">

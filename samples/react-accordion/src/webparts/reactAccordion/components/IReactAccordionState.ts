@@ -7,5 +7,7 @@ export interface IReactAccordionState {
   isLoading: boolean;
   loaderMessage: string;
   color: string;
+  textColor: string;
   onColorChanged: any;
+  onTextColorChanged: any;
 }

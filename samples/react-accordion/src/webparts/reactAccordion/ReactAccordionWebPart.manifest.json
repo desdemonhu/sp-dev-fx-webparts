@@ -26,7 +26,8 @@
         "description": "SPFx webpart which shows SharePoint list data in Accordion format",
         "listName": "FAQ",
         "maxItemsPerPage": 5,
-        "color": "[theme: themePrimary, default: #0078d7]"
+        "color": "[theme: themePrimary, default: #0078d7]",
+        "textColor": "[theme: themePrimary, default: #0078d7]"
       }
     }
   ]
