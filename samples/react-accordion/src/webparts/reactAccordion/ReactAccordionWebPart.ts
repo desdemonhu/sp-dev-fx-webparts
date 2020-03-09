@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as ReactDom from 'react-dom';
 import { Version, DisplayMode } from '@microsoft/sp-core-library';
 import { BaseClientSideWebPart } from "@microsoft/sp-webpart-base";
-import { IPropertyPaneConfiguration, PropertyPaneSlider, PropertyPaneTextField} from "@microsoft/sp-property-pane";
+import { IPropertyPaneConfiguration, PropertyPaneSlider, PropertyPaneTextField, PropertyPaneButton} from "@microsoft/sp-property-pane";
 
 import { SPHttpClient } from '@microsoft/sp-http';
 
@@ -32,10 +32,15 @@ export interface IReactAccordionWebPartProps {
 
 
 export default class ReactAccordionWebPart extends BaseClientSideWebPart<IReactAccordionWebPartProps> {
+  
  /* protected get disableReactivePropertyChanges(): boolean {
     return true;
     }
     */
+  protected resetStyles(){
+      this.onColorChange("[theme: themePrimary, default: #0078d7]");
+      this.onTextColorChange("[theme: themePrimary, default: #0078d7]");
+    }
 
   protected onColorChange(color: any) {
   update(
@@ -131,6 +136,10 @@ export default class ReactAccordionWebPart extends BaseClientSideWebPart<IReactA
                   value: 5,
                   showValue: true,
                   step: 1
+                }),
+                PropertyPaneButton('restStyle', {
+                  text: "Rest Styles",
+                  onClick: this.resetStyles.bind(this)
                 }),
               ]
             }
