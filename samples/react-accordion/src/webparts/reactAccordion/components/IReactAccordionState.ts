@@ -8,6 +8,10 @@ export interface IReactAccordionState {
   loaderMessage: string;
   color: string;
   textColor: string;
+  bodyBackgroundColor: string;
+  bodyTextColor: string;
   onColorChanged: any;
   onTextColorChanged: any;
+  onBodyBackgroundColorChanged: any;
+  onBodyTextColorChanged: any;
 }

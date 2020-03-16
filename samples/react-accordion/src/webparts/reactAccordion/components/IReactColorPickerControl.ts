@@ -11,8 +11,12 @@ onRender: any;
 label: string;
 color: string;
 textColor: string;
+bodyBackgroundColor: string;
+bodyTextColor: string;
 onColorChanged: (color: string) => void;
 onTextColorChanged: (textColor: string) => void;
+onBodyBackgroundColorChanged: (bodyBackgroundColor: string) => void;
+onBodyTextColorChanged: (bodyTextColor: string) => void;
 }
 
 export class ColorPickerControlProperty implements IPropertyPaneField<ColorPickerControlInternalProps> {
@@ -28,8 +32,12 @@ key: properties.key,
 label: properties.label,
 color: properties.color,
 textColor: properties.textColor,
+bodyBackgroundColor: properties.bodyBackgroundColor,
+bodyTextColor: properties.bodyTextColor,
 onColorChanged: properties.onColorChanged,
 onTextColorChanged: properties.onTextColorChanged,
+onBodyBackgroundColorChanged: properties.onBodyBackgroundColorChanged,
+onBodyTextColorChanged: properties.onBodyTextColorChanged,
 onRender: this.onRender.bind(this)
 };
 }
@@ -49,8 +57,12 @@ key: this.properties.key,
 label: this.properties.label,
 color: this.properties.color,
 textColor: this.properties.textColor,
+bodyBackgroundColor: this.properties.bodyBackgroundColor,
+bodyTextColor: this.properties.bodyTextColor,
 onColorChanged: this.properties.onColorChanged,
-onTextColorChanged: this.properties.onTextColorChanged
+onTextColorChanged: this.properties.onTextColorChanged,
+onBodyBackgroundColorChanged: this.properties.onBodyBackgroundColorChanged,
+onBodyTextColorChanged: this.properties.onBodyTextColorChanged
 });
 ReactDom.render(element, elem);
 }

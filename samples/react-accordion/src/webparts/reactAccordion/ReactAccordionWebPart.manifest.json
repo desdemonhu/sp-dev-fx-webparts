@@ -27,7 +27,10 @@
         "listName": "FAQ",
         "maxItemsPerPage": 5,
         "color": "[theme: themePrimary, default: #0078d7]",
-        "textColor": "[theme: themePrimary, default: #0078d7]"
+        "textColor": "[theme: themePrimary, default: #0078d7]",
+        "bodyBackgroundColor": "[theme: themeLighterAlt, default: #0078d7]",
+        "bodyTextColor": "[theme: bodyText, default: #333333]"
+
       }
     }
   ]

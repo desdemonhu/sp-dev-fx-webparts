@@ -34,8 +34,12 @@ export default class ReactAccordion extends React.Component<IReactAccordionProps
       loaderMessage: '',
       color: this.props.color,
       textColor: this.props.textColor,
+      bodyBackgroundColor: this.props.bodyBackgroundColor,
+      bodyTextColor: this.props.bodyTextColor,
       onColorChanged: this.props.onColorChanged,
-      onTextColorChanged: this.props.onTextColorChanged
+      onTextColorChanged: this.props.onTextColorChanged,
+      onBodyBackgroundColorChanged: this.props.onBodyBackgroundColorChanged,
+      onBodyTextColorChanged: this.props.onBodyTextColorChanged
     };
 
     if (!this.listNotConfigured(this.props)) {
@@ -92,6 +96,8 @@ export default class ReactAccordion extends React.Component<IReactAccordionProps
           items: listItemsCollection.splice(0, this.props.maxItemsPerPage),
           color: this.props.color,
           textColor: this.props.textColor,
+          bodyBackgroundColor: this.props.bodyBackgroundColor,
+          bodyTextColor: this.props.bodyTextColor,
           listItems: response.value,
           isLoading: false,
           loaderMessage: ""
@@ -118,6 +124,9 @@ export default class ReactAccordion extends React.Component<IReactAccordionProps
         background: ${this.props.color};
         padding: 5px 20px;
         `;
+    let StyledComponentItemBody = styled(AccordionItemBody) `
+      background: ${this.props.bodyBackgroundColor} !important;
+      `;
 
     let _pagedButtonClick = (pageNumber: number, listData: any) => {
       let startIndex: number = (pageNumber - 1) * pageCountDivisor;
@@ -133,10 +142,11 @@ export default class ReactAccordion extends React.Component<IReactAccordionProps
            ><span style={{color: `${this.props.textColor}`}}>{item.Title}</span></h3>
             <div className="accordion__arrow ms-fontColor-white" role="presentation" />
           </StyledComponent>
-          <AccordionItemBody className="accordion__body">
-            <div className="" dangerouslySetInnerHTML={{ __html: item.Description }}>
+          <StyledComponentItemBody className="accordion__body" >
+            <div className="" style={{color: `${this.props.bodyTextColor}`,background: `${this.props.bodyBackgroundColor}`}}
+            dangerouslySetInnerHTML={{ __html: item.Description }}>
             </div>
-          </AccordionItemBody>
+          </StyledComponentItemBody>
         </AccordionItem>
       );
     });
