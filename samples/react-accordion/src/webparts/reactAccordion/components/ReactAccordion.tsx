@@ -178,9 +178,9 @@ export default class ReactAccordion extends React.Component<IReactAccordionProps
             updateProperty={this.props.updateProperty} />
           <div className='ms-Grid-row'>
             <div className='ms-Grid-col ms-u-lg12'>
-              <SearchBox
+              {/* <SearchBox
                 onChange={this.searchTextChange}
-              />
+              /> */}
             </div>
           </div>
           <div className={`ms-Grid-row`}>
@@ -191,11 +191,11 @@ export default class ReactAccordion extends React.Component<IReactAccordionProps
               </Accordion>
             </div>
           </div>
-          <div className='ms-Grid-row'>
+          {/* <div className='ms-Grid-row'>
             <div className='ms-Grid-col ms-u-lg12'>
               {pageButtons}
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     );

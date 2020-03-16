@@ -27,7 +27,7 @@ Version|Date|Comments
 -------|----|--------
 1.0|August 17, 2018|Initial release
 2.0|January 19, 2020|Upgrade to SPFx 1.10
-3.0|March 16, 2020|Added Options to change color scheme in PropertyPane
+3.0|March 16, 2020|Added Options to change color scheme in PropertyPane (Raegan Millhollin)
 
 ## Disclaimer
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
