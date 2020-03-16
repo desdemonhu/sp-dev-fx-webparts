@@ -2,7 +2,7 @@
 
 ## Summary
 
-This is a sample web Part that illustrates the use of React Accessible Accordion plugin for building SharePoint Framework client-side web parts to show SharePoint list data in Accordion format.
+This is a web part that uses the React Accessible Accordion plugin for building SharePoint Framework client-side web parts to show SharePoint list data in Accordion format.
 
 ![Sample Web Part built using SPFx with React Framework showing list data in accordion format](./assets/previewAccordion.PNG)
 
@@ -19,6 +19,7 @@ This is a sample web Part that illustrates the use of React Accessible Accordion
 Solution|Author(s)
 --------|---------
 react-accordion | Gautam Sheth (SharePoint Consultant, RapidCircle)
+react-accordion(PropertyPane settings) | Raegan Millhollin (SharePoint Consultant)
 
 ## Version history
 
@@ -26,6 +27,7 @@ Version|Date|Comments
 -------|----|--------
 1.0|August 17, 2018|Initial release
 2.0|January 19, 2020|Upgrade to SPFx 1.10
+3.0|March 16, 2020|Added Options to change color scheme in PropertyPane
 
 ## Disclaimer
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
