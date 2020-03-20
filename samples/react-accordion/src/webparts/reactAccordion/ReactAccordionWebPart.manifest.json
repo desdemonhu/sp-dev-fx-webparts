@@ -1,6 +1,6 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
-  "id": "97a28c00-64ee-4ec7-b373-723e39069a96",
+  "id": "97a28c00-64ee-4ec7-b373-723e39069a97",
   "alias": "ReactAccordionWebPart",
   "componentType": "WebPart",
   "version": "*",
@@ -11,15 +11,15 @@
   ],
   "preconfiguredEntries": [
     {
-      "groupId": "5c03119e-3074-46fd-976b-c60198311f70",
+      "groupId": "5c03119e-3074-46fd-976b-c60198311f71",
       "group": {
         "default": "Other"
       },
       "title": {
-        "default": "React Accordion App"
+        "default": "React Accordion with Color Changer"
       },
       "description": {
-        "default": "SPFx webpart which shows SharePoint list data in Accordion format"
+        "default": "SPFx webpart which shows SharePoint list data in Accordion format, where you can change the colors of the title and body"
       },
       "officeFabricIconFontName": "Questionnaire",
       "properties": {

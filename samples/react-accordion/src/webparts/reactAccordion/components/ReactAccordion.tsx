@@ -76,13 +76,15 @@ export default class ReactAccordion extends React.Component<IReactAccordionProps
   }
 
   private readItems(): void {
-    let restAPI = this.props.siteUrl + `/_api/web/Lists/GetByTitle('${this.props.listName}')/items?$select=Title,Description`;
+    let restAPI = this.props.siteUrl + `/_api/web/Lists/GetByTitle('${this.props.listName}')/items?$select=Title,Description&clienttype='SOMEUNIQUEVALUE'`;
 
     this.props.spHttpClient.get(restAPI, SPHttpClient.configurations.v1, {
       headers: {
         'Accept': 'application/json;odata=nometadata',
-        'odata-version': ''
-      }
+        'odata-version': '',
+        'UserAgent': 'NONISV|Microsoft|React-accordion-color-changer/1.0'
+      },
+      credentials: 'include'
     })
       .then((response: SPHttpClientResponse): Promise<{ value: IAccordionListItem[] }> => {
         return response.json();

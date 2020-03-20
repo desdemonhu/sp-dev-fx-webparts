@@ -1,13 +1,14 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
   "solution": {
-    "name": "react-accordion-client-side-solution",
-    "id": "6d6cf05b-cfe5-4d12-af19-19ec3aedcaf9",
+    "name": "react-accordion-color-changer",
+    "id": "6d6cf05b-cfe5-4d12-af19-19ec3aedcaf0",
     "version": "1.0.0.0",
     "includeClientSideAssets": true,
-    "isDomainIsolated": false
+    "isDomainIsolated": false,
+    "skipFeatureDeployment": false
   },
   "paths": {
-    "zippedPackage": "solution/react-accordion.sppkg"
+    "zippedPackage": "solution/react-accordion-color-changer.sppkg"
   }
 }
